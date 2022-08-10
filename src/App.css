@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.BucketBody {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 15px;
+  margin-top: 10px !important;
+}
+.BucketInput form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.BucketInput form input {
+  margin: 15px;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.NewBucket {
+  position: absolute !important;
+  bottom: 5%;
+  right: 5%;
+  z-index: 1000;
+}
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.text-center {
+  text-align: center !important;
+  margin: 23px;
+}
