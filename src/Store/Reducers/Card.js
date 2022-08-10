@@ -2,19 +2,19 @@ const initialState = [
   {
     name: "DSA Course",
     id: "1",
-    link: "https://www.youtube.com/results?search_query=DsA+c%2B%2B",
+    link: "https://www.youtube.com/watch?v=PZogbfU4X5E",
     Bucket: "Educational",
   },
   {
     name: "Javascript Course",
     id: "2",
-    link: "https://www.youtube.com/results?search_query=DsA+c%2B%2B",
+    link: "https://www.youtube.com/watch?v=hKB-YGF14SY&t=9659s",
     Bucket: "Educational",
   },
   {
     name: "Kesariya",
     id: "3",
-    link: "https://www.youtube.com/results?search_query=DsA+c%2B%2B",
+    link: "https://www.youtube.com/watch?v=BddP6PYo2gs",
     Bucket: "Entertainment",
   },
 ];
@@ -22,10 +22,8 @@ const Card = (state = initialState, action) => {
   let NewState = [];
   if (action.type === "CreateNewCard") {
     NewState = [...state, action.state];
-    console.log(NewState);
   } else if (action.type === "DeleteCard") {
     NewState = state.filter((item) => item.id !== action.state.id);
-    console.log(NewState);
   } else if (action.type === "EditCard") {
     let idx = state
       .map((e) => {

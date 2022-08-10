@@ -5,11 +5,22 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { useDispatch } from "react-redux";
 import { DeleteCard } from "../../Store/Actions";
 import CardEdit from "./cardEdit";
+import Video from "../Video/video";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Carditem = (props) => {
   const dispatch = useDispatch();
-  const link = props.link;
   const Delete = () => {
+    toast.success("Card Deleted", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     dispatch(DeleteCard(props));
   };
 
@@ -18,10 +29,8 @@ const Carditem = (props) => {
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          <Video link={props.link} name={props.name} id={props.id}></Video>
         </Card.Text>
-
         <ButtonGroup aria-label="Basic example">
           <CardEdit
             name={props.name}
@@ -34,6 +43,17 @@ const Carditem = (props) => {
           </Button>
         </ButtonGroup>
       </Card.Body>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </Card>
   );
 };

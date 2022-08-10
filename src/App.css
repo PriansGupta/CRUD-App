@@ -33,3 +33,9 @@
   text-align: center !important;
   margin: 23px;
 }
+.card-text{
+  cursor: pointer;
+}
+.History{
+  margin-top: 60px !important;
+}

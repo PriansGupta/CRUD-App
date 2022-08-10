@@ -4,6 +4,8 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
 import { EditCard } from "../../Store/Actions";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CardEdit = (props) => {
   const Buckets = useSelector((state) => state.Bucket);
@@ -32,7 +34,6 @@ const CardEdit = (props) => {
       return e.name;
     }).indexOf(Bucket);
 
-    console.log(idx);
     if (idx !== -1) {
       const card = {
         name: Name,
@@ -40,11 +41,39 @@ const CardEdit = (props) => {
         Bucket: Bucket,
         id: props.id,
       };
-      console.log(card);
-      dispatch(EditCard(card));
       if (card.name.length > 0) {
+        dispatch(EditCard(card));
+        toast.success("Card Updated", {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        setSmShow(false);
+      } else {
+        toast.error("Enter Valid details", {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       }
-      setSmShow(false);
+    } else {
+      toast.warn("Bucket Not Found", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
   return (
@@ -79,7 +108,7 @@ const CardEdit = (props) => {
                   value={link}
                   onChange={linkChangeHandler}
                   type="text"
-                  placeholder="Video Link"
+                  placeholder="Youtube Video Link"
                 ></input>
               </span>
               <span>
@@ -95,6 +124,17 @@ const CardEdit = (props) => {
             </form>
           </div>
         </Modal.Body>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </Modal>
     </>
   );

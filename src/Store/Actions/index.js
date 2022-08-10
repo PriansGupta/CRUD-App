@@ -44,11 +44,21 @@ export const EditCard = (props) => {
 };
 
 export const DeleteAll = (props) => {
-  console.log(props)
   return {
     state: {
       Bucket: props.Bucket,
     },
     type: "DeleteAll",
+  };
+};
+
+export const AddHistory = (props) => {
+  return {
+    state: {
+      Cardname: props.name,
+      id: props.id,
+      link: props.link,
+    },
+    type: "AddHistory",
   };
 };
