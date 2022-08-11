@@ -1,4 +1,4 @@
-HERE the live link
+HERE is the live link
 https://priansgupta.github.io/CRUD-App/
 
 # Getting Started with Create React App
