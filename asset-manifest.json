@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/CRUD-App/static/css/main.ca1e2018.css",
-    "main.js": "/CRUD-App/static/js/main.7e3029ff.js",
+    "main.js": "/CRUD-App/static/js/main.3bc38b8b.js",
     "static/js/27.17f0f9a1.chunk.js": "/CRUD-App/static/js/27.17f0f9a1.chunk.js",
     "index.html": "/CRUD-App/index.html"
   },
   "entrypoints": [
     "static/css/main.ca1e2018.css",
-    "static/js/main.7e3029ff.js"
+    "static/js/main.3bc38b8b.js"
   ]
 }
