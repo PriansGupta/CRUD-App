@@ -6,6 +6,7 @@ import NewCard from "../Card/newCard";
 import Button from "react-bootstrap/esm/Button";
 import { useDispatch } from "react-redux";
 import { DeleteAll } from "../../Store/Actions";
+import { DeleteBucket } from "../../Store/Actions";
 
 const Bucket = (props) => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const Bucket = (props) => {
       Bucket: props.name,
     };
     dispatch(DeleteAll(Data));
+    dispatch(DeleteBucket(Data));
   };
 
   const Cards = useSelector((state) => state.Card);

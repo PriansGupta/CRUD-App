@@ -52,6 +52,15 @@ export const DeleteAll = (props) => {
   };
 };
 
+export const DeleteBucket = (props) => {
+  return {
+    state: {
+      Bucket: props.Bucket,
+    },
+    type: "DeleteBucket",
+  };
+};
+
 export const AddHistory = (props) => {
   return {
     state: {

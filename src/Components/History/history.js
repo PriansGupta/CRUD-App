@@ -1,4 +1,3 @@
-import Badge from "react-bootstrap/Badge";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useSelector } from "react-redux";
 
@@ -6,7 +5,7 @@ const History = () => {
   const HistoryItems = useSelector((state) => state.CreateHistory);
   return (
     <ListGroup as="ol" numbered>
-      {HistoryItems.length == 0 && <h6>Nothing Viewed Yet</h6>}
+      {HistoryItems.length === 0 && <h6>Nothing Viewed Yet</h6>}
       {HistoryItems.map((item) => {
         return (
           <ListGroup.Item

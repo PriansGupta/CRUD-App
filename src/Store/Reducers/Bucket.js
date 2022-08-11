@@ -9,9 +9,16 @@ const initialState = [
   },
 ];
 const Bucket = (state = initialState, action) => {
-  const NewState = [...state, action.state];
+  let NewState;
+  if (action.type === "CreateBucket") NewState = [...state, action.state];
+  else if (action.type === "DeleteBucket") {
+    state = state.filter((item) => item.name !== action.state.Bucket);
+    NewState = [...state];
+  }
   switch (action.type) {
     case "CreateBucket":
+      return (state = [...NewState]);
+    case "DeleteBucket":
       return (state = [...NewState]);
     default:
       return state;

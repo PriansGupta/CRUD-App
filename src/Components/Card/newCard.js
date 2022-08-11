@@ -23,16 +23,27 @@ const NewCard = (props) => {
     };
     if (card.name.length && card.link.length && card.Bucket.length) {
       dispatch(CreateNewCard(card));
+      toast.success("Card Created Successfully", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
-    toast.success("Card Created Successfully", {
-      position: "bottom-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+    else{
+      toast.error("Provide proper details", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
     setSmShow(false);
   };
   return (
