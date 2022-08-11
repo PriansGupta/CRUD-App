@@ -1,7 +1,6 @@
-Here is the live link
+HERE the live link
 https://priansgupta.github.io/CRUD-App/
 
-//Run on local machine
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
